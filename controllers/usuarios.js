@@ -58,7 +58,7 @@ const usuariosPost = async (req, res = response) => {
     usuario,
   });
 };
-const usuariosDelete = async (req, res) => {
+const usuariosDelete = async (req, res = response) => {
   const { id } = req.params;
 
   // físicamente lo borramos
@@ -69,6 +69,7 @@ const usuariosDelete = async (req, res) => {
 
   res.json(usuario);
 };
+
 const usuariosPatch = (req, res) => {
   res.json({
     msg: "patch API - controlador",

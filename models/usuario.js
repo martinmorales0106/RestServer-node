@@ -34,7 +34,8 @@ const UsuarioSchema = new Schema({
 
 // para sacar valores del usuario que no quiero mostrar
 UsuarioSchema.methods.toJSON = function () {
-  const { __v, password, ...usuarios } = this.toObject();
+  const { __v, password, _id, ...usuarios } = this.toObject();
+  usuarios.uid = _id;
   return usuarios;
 };
 
